@@ -1,0 +1,150 @@
+body {
+  font-family: Roboto, sans-serif;
+  color: #333;
+  margin: 0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-touch-callout: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+form {
+  visibility: hidden;
+}
+
+h3 {
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-bottom: 10px;
+  font-weight: normal;
+  font-size: 12px;
+}
+
+iron-collapse {
+  margin-bottom: 5px;
+}
+
+paper-icon-item {
+  padding-left: 35px;
+}
+
+paper-item {
+  outline: none;
+  cursor: pointer;
+}
+
+paper-item-body {
+  padding-left: 20px;
+}
+
+paper-ripple {
+  pointer-events: none;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 20px;
+  font-size: 12px;
+}
+
+.ripple {
+  position: relative;
+}
+
+.top-shadow {
+  box-shadow: inset 0px 5px 6px -4px rgba(0, 0, 0, 0.4);
+}
+
+#bio {
+  padding: 50px 20px 10px 20px;
+}
+
+#coverart {
+  vertical-align: middle;
+  max-width: 90%;
+  max-height: 90vh;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#drawer {
+  z-index: 0;
+  background-color: rgb(200, 250, 240); /* Bleu ciel turquoise */
+  color: rgb(0, 175, 175);
+  overflow: scroll;
+}
+
+#drawerTitle {
+  width: 36%;
+}
+
+#emailLink {
+  color: rgb(0, 175, 175);
+}
+
+#menuBtn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: rgb(0, 175, 175);
+  visibility: hidden;
+  z-index: 99;
+}
+
+#mainContainer {
+  height: 100%;
+}
+
+@media only screen and (max-width: 640px) {
+  #mainContainer {
+    right: 0;
+  }
+
+  #menuBtn {
+    visibility: visible;
+  }
+}
+
+#main-section {
+  z-index: 10;
+}
+
+#orderLink {
+  color: rgb(0, 175, 175);
+  font-size: 20px;
+  font-weight: 200;
+  /*display: inline-block;*/
+  padding: 15px 17% 15px 17%;
+  cursor: pointer;
+}
+
+#scrim {
+  z-index: 19;
+}
+
+#subContainer {
+  text-align: center;
+  margin: auto;
+  max-height: 100%;
+  display: block;
+}
+
+#concerts, #twitter, #videos {
+  color: rgb(200, 250, 240);
+  background-color: rgb(0, 175, 175);
+}
+
+#facebook, #soundcloud, #instagram {
+  background-color: rgb(15, 120, 130);
+  color: rgb(0, 186, 186);
+}

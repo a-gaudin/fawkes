@@ -1,0 +1,171 @@
+<!doctype html>
+
+<html>
+<head>
+  <title>Fawkes</title>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+
+  <link rel="shortcut icon" type="image/png" href="/img/favicon.png"/>
+
+  <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+
+  <link rel="import" href="bower_components/polymer/polymer.html">
+
+  <link rel="import" href="bower_components/iron-collapse/iron-collapse.html">
+  <link rel="import" href="bower_components/iron-flex-layout/classes/iron-flex-layout.html">
+  <link rel="import" href="bower_components/iron-icons/iron-icons.html">
+  <link rel="import" href="bower_components/iron-icons/device-icons.html">
+  <link rel="import" href="bower_components/iron-icons/image-icons.html">
+  <link rel="import" href="bower_components/paper-card/paper-card.html">
+  <link rel="import" href="bower_components/paper-drawer-panel/paper-drawer-panel.html">
+  <link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html">
+  <link rel="import" href="bower_components/paper-input/paper-input.html">
+  <link rel="import" href="bower_components/paper-item/paper-item.html">
+  <link rel="import" href="bower_components/paper-menu/paper-menu.html">
+  <link rel="import" href="bower_components/paper-ripple/paper-ripple.html">
+  <link rel="import" href="bower_components/paper-tooltip/paper-tooltip.html">
+  <link rel="import" href="bower_components/font-roboto/roboto.html">
+
+  <link rel="stylesheet" href="styles.css" is="custom-style">
+</head>
+
+<body unresolved>
+  <paper-drawer-panel drawer-width="320px" right-drawer>
+    <div main id="main-section" class="horizontal center-justified layout">
+      <paper-icon-button icon="menu" id="menuBtn" onclick="toggleDrawer();"></paper-icon-button>
+
+      <div class="horizontal layout center" id="mainContainer">
+
+        <div id="subContainer">
+          <div>
+            <img class="horizontal layout center" src="img/coverart.jpg" id="coverart">
+            <paper-tooltip offset="-65" animationDelay="1700" fitToVisibleBounds>Illustration bygano.com</paper-tooltip>
+          </div>
+
+          <a id="orderLink" onclick="showPaypal();">Acheter l'EP</a>
+
+          <!-- Checkout gateway using Paypal -->
+          <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+            <input type="hidden" name="cmd" value="_s-xclick">
+            <input type="hidden" name="hosted_button_id" value="K8ANKYPP5NF9A">
+            <input type="image" src="https://www.paypalobjects.com/fr_FR/FR/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal, le réflexe sécurité pour payer en ligne">
+            <img alt="" border="0" src="https://www.paypalobjects.com/fr_FR/i/scr/pixel.gif" width="1" height="1">
+          </form>
+        </div>
+
+      </div>
+    </div>
+
+    <div drawer id="drawer" class="vertical layout" style="height:100%">
+
+      <div id="bio" onclick="toggleIronCollapses(6);">
+        <img id="drawerTitle" src="img/drawer_title.svg">
+      </div>
+      <iron-collapse id="bio-collapse" opened>
+        <h3>
+          Encore débutant il y a deux ans, ce jeune musicien de 26 piges en impose déjà sur scène, en candide charismatique et touchant. En solo, accompagné de son minuscule ukulélé (et de quelques nouveaux jouets électroniques), Fawkes vous emmène sans peine dans son monde. Frais devant !
+        </h3>
+        <h3>
+          Me contacter:
+          <a id="emailLink" href="mailto:thatsallfawkes@gmail.com" target="_top">thatsallfawkes@gmail.com</a>
+        </h3>
+      </iron-collapse>
+
+      <div id="concerts" class="top-shadow ripple">
+        <paper-item onclick="toggleIronCollapses(0);">
+          <paper-ripple></paper-ripple>
+          <paper-icon-item>
+            <iron-icon icon="icons:event" item-icon></iron-icon>
+          </paper-icon-item>
+          <paper-item-body>Concerts</paper-item-body>
+        </paper-item>
+        <iron-collapse id="concerts-collapse">
+          <ul>
+            <li>22/01 - Laval - 6par4</li>
+            <li>13/02 - Forcé - La Grange de l'Orbière</li>
+            <li>15/03 - Cossé-Le-Vivien - Festival A travers chants</li>
+            <li>1/04 et 2/04 - Redon - P'tit Théâtre Notre Dame</li>
+            <li>7/04 - Laval - Les Nocturnes de la librairie Corneille</li>
+          </ul>
+        </iron-collapse>
+      </div>
+
+      <div id="facebook" class="top-shadow ripple">
+        <paper-item onclick="toggleIronCollapses(1);">
+          <paper-ripple></paper-ripple>
+          <paper-icon-item>
+            <iron-icon src="icons/facebook.svg"></iron-icon>
+          </paper-icon-item>
+          <paper-item-body>Facebook</paper-item-body>
+        </paper-item>
+        <iron-collapse id="facebook-collapse"></iron-collapse>
+      </div>
+
+      <div id="twitter" class="top-shadow ripple">
+        <paper-item onclick="toggleIronCollapses(2);">
+          <paper-ripple></paper-ripple>
+          <paper-icon-item>
+            <iron-icon src="icons/twitter.svg"></iron-icon>
+          </paper-icon-item>
+          <paper-item-body>Twitter</paper-item-body>
+        </paper-item>
+        <iron-collapse id="twitter-collapse"></iron-collapse>
+      </div>
+
+      <div id="soundcloud" class="top-shadow ripple">
+        <paper-item onclick="toggleIronCollapses(3);">
+          <paper-ripple></paper-ripple>
+          <paper-icon-item>
+            <iron-icon src="icons/soundcloud.svg"></iron-icon>
+          </paper-icon-item>
+          <paper-item-body>Soundcloud</paper-item-body>
+        </paper-item>
+        <iron-collapse id="soundcloud-collapse"></iron-collapse>
+      </div>
+
+      <div id="videos" class="top-shadow ripple">
+        <paper-item onclick="toggleIronCollapses(4);">
+          <paper-ripple></paper-ripple>
+          <paper-icon-item>
+            <iron-icon src="icons/youtube.svg"></iron-icon>
+          </paper-icon-item>
+          <paper-item-body>YouTube</paper-item-body>
+        </paper-item>
+        <iron-collapse id="videos-collapse">
+          <iframe id='video1' width="322" height="190" allowfullscreen="allowfullscreen"
+            src="http://www.youtube.com/embed/ZGU2mqqhbxk?autoplay=0" frameborder="0">
+          </iframe>
+          <iframe id='video2' width="322" height="190" allowfullscreen="allowfullscreen"
+            src="http://www.youtube.com/embed/VRkBNGuK5Ts?autoplay=0" frameborder="0">
+          </iframe>
+          <iframe id='video3' width="322" height="190" allowfullscreen="allowfullscreen"
+            src="http://www.youtube.com/embed/mOdd9r_4ohk?autoplay=0" frameborder="0">
+          </iframe>
+        </iron-collapse>
+      </div>
+
+      <div id="instagram" class="top-shadow ripple">
+        <paper-item onclick="toggleIronCollapses(5);">
+          <paper-ripple></paper-ripple>
+          <paper-icon-item>
+            <iron-icon src="icons/instagram.svg"></iron-icon>
+          </paper-icon-item>
+          <paper-item-body>Instagram</paper-item-body>
+        </paper-item>
+        <iron-collapse id="instagram-collapse"></iron-collapse>
+      </div>
+
+    </div>
+
+
+  </paper-drawer-panel>
+
+  <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
